@@ -45,4 +45,6 @@ Route::get('/posting/all/{id}/delete',[PostingController::class,'deleteMessage']
 
 
 Route::get('send',[MailController::class,'send'])->name('send');
-Route::get('users', [UserController::class,'users'])->name('users');
+Route::get('users-list', [UserController::class,'users'])->name('users-list');
+
+Route::resource('users', 'App\Http\Controllers\UserController');

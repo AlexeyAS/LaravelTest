@@ -5,13 +5,16 @@
 
 @section('content')
     <h1 style="text-align: center">Сообщения всех пользователей</h1>
-    <a style="display: block; text-align: center;" href="#">
-        <button class="btn btn-warning my-2 mx-auto">Фильтр по пользователю</button>
-    </a>
+
+    <form class="search" action="" method="post" >
+        <input type="search" class="form-control" placeholder="Введи имя пользователя">
+        <button class="btn btn-warning my-2 mx-auto" type="submit">Фильтр по пользователю</button>
+    </form>
     <br>
-    <a style="display: block; text-align: center;" href="#">
-        <button class="btn btn-warning my-2 mx-auto">Фильтр по содержанию текста</button>
-    </a>
+    <form class="search" action="" method="post" >
+        <input type="search" class="form-control" placeholder="Введи текст">
+        <button class="btn btn-warning my-2 mx-auto" type="submit">Фильтр по содержанию текста</button>
+    </form>
     <br>
 
     @foreach($data as $element)

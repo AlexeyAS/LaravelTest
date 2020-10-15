@@ -9,6 +9,12 @@ class UserController extends Controller
     public function users(){
 
         $users=User::paginate(3);
-        return view('users', compact('users'));
+        return view('users-list', compact('users'));
+    }
+
+    public function index(Request $request, User $user){
+        //$users = User::all();
+        $users = $user->getUsersBySearch($request)->get();
+        return view('users')->with('users',$users);
     }
 }

@@ -10928,3 +10928,8 @@ textarea {
   overflow: hidden;
 }
 
+.search .btn {
+  display: block;
+  text-align: center;
+}
+
