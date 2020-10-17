@@ -4,6 +4,7 @@ body {
 textarea {
   min-height: 150px;
 }
+
 .aside {
   text-align: center;
   text-transform: uppercase;
@@ -17,4 +18,8 @@ textarea {
   height: 40px;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.search .btn{
+  display: block;
+  text-align: center;
 }

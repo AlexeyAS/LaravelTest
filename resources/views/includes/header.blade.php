@@ -12,7 +12,7 @@
             <!-- Left Side Of Navbar -->
             @auth
                 <ul class="navbar-nav mx-auto">
-                    <a class="p-2 text-dark" href="{{ route('posting-wall') }}">Все Посты</a>
+                    <a class="p-2 text-dark" href="{{ route('postings') }}">Все Посты</a>
                     <a class="p-2 text-dark" href="{{ route('posting-data') }}">Посты Пользователя</a>
                     <a class="p-2 text-dark" href="{{ route('posting-new') }}">Написать Пост</a>
                     <a class="p-2 text-dark" href="{{ route('users') }}">Список Пользователей</a>

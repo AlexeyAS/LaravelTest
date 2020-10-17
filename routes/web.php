@@ -34,7 +34,6 @@ Route::get('/posting-new', function () {
 
 //Route::post('/contact/submit', function () {
 //dd(Request::all());
-Route::get('/posting/wall',[PostingController::class,'allUsersPosts'])->name('posting-wall');
 
 Route::get('/posting/all',[PostingController::class,'allData'])->name('posting-data');
 Route::post('/posting/submit',[PostingController::class,'submit'])->name('posting-form');
@@ -45,4 +44,11 @@ Route::get('/posting/all/{id}/delete',[PostingController::class,'deleteMessage']
 
 
 Route::get('send',[MailController::class,'send'])->name('send');
-Route::get('users', [UserController::class,'users'])->name('users');
+
+
+
+Route::get('users', [UserController::class,'index'])->name('users');
+
+Route::get('/postings',[PostingController::class,'index'])->name('postings');
+Route::resource('users-search', 'App\Http\Controllers\UserController');
+Route::resource('postings-search', 'App\Http\Controllers\PostingController');

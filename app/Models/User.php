@@ -2,9 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Filters\UserSearch;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
@@ -40,4 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getUsersBySearch(Request $request) : Builder
+    {
+        $builder = (new UserSearch())->apply($request);
+        return $builder;
+    }
 }

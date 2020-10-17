@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="container">
         <form>
             <div class="form-group">
@@ -31,18 +29,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($users as $user)
+                <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td></td>
-                        <td>{{$user->name}}</td>
-                        <td>{{$user->email}}</td>
+                        <td><?php echo e($user->name); ?></td>
+                        <td><?php echo e($user->email); ?></td>
                         <td></td>
                         <td>Время последнего поста</td>
                     </tr>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
         </div>
-        {{$users->links('vendor.pagination.bootstrap-4')}}
+        <?php echo e($users->links('vendor.pagination.bootstrap-4')); ?>
+
     </div>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/resources/views/users.blade.php ENDPATH**/ ?>

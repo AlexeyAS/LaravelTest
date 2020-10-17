@@ -9,6 +9,11 @@ use App\Models\Posting;
 class PostingController extends Controller
 {
 
+    public function index(Request $request, Posting $posting){
+        //$users = User::all();
+        $postings = $posting->getPostingsBySearch($request)->orderBy('id', 'desc')->get();
+        return view('postings', compact('postings'))->with('postings',$postings);
+    }
 
     public function lastMessage(){
         $posting = new Posting;
@@ -36,10 +41,12 @@ class PostingController extends Controller
 //        dd($req -> input('message'));
     }
 
+    /*
     public function allUsersPosts(){
         $posting = new Posting;
-        return view('posting-wall', ['data' => $posting->orderBy('id', 'desc')->get()]);
+        return view('postings', ['postings' => $posting->orderBy('id', 'desc')->get()]);
     }
+*/
 
     public function allData()
     {
