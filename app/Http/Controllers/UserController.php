@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -20,9 +21,11 @@ class UserController extends Controller
     }
     */
 
-    public function index(Request $request, User $user){
+    public function index(Request $request, User $user)
+    {
         //$users = User::all();
-        $users = $user->getUsersBySearch($request)->paginate(3);
-        return view('users', compact('users'))->with('users',$users);
+
+        $users = $user->getUsersBySearch($request)->paginate(3)->appends('name', $request['name'])->appends('email', $request['email']);
+        return view('users', compact('users', 'request'))->with(['users' => $users, 'request' => $request]);
     }
 }

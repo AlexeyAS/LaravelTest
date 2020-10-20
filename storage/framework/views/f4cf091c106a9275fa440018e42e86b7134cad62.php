@@ -3,12 +3,12 @@
         <form>
             <div class="form-group">
                 <label for="exampleInputEmail">Search by name</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Поиск">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Поиск" value="<?php echo e($request->name); ?>">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail">Search by email</label>
-                <input type="text" name="email" class="form-control" id="email" placeholder="Поиск">
+                <input type="text" name="email" class="form-control" id="email" placeholder="Поиск" value="<?php echo e($request->email); ?>">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
