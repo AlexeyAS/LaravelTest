@@ -51,4 +51,3 @@ Route::get('users', [UserController::class,'index'])->name('users');
 
 Route::resource('postings-search', 'App\Http\Controllers\PostingController');
 Route::resource('users-search', 'App\Http\Controllers\UserController');
-
