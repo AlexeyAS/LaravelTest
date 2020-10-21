@@ -8,8 +8,11 @@
 </p>
 
 ## Install
-
-
+1) Create .env file from .env.example
+2) `composer install`
+3) `npm install && npm run dev`
+4) (Optional) `chmod -R 777 .`
+5) `php artisan migrate` OR import laravel_db with test values
 
 ## About Laravel
 
