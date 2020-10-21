@@ -34,8 +34,8 @@
                         <td></td>
                         <td><?php echo e($user->name); ?></td>
                         <td><?php echo e($user->email); ?></td>
-                        <td></td>
-                        <td>Время последнего поста</td>
+                        <td><?php echo e($postings[$user->name]['count']); ?></td>
+                        <td><?php echo e($postings[$user->name]['created_at']); ?></td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>

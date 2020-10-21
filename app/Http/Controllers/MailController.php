@@ -10,7 +10,7 @@ class MailController extends Controller
 {
     public function send(){
         Mail::send(new sendMail());
-        return redirect()->route('welcome')->with('success', 'Спам отправлен');
+        return redirect()->route('main')->with('success', 'Спам отправлен');
     }
 
     public function email(){

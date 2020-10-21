@@ -36,8 +36,8 @@
                         <td></td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td></td>
-                        <td>Время последнего поста</td>
+                        <td>{{$postings[$user->name]['count']}}</td>
+                        <td>{{$postings[$user->name]['created_at']}}</td>
                     </tr>
                 @endforeach
                 </tbody>

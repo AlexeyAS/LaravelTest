@@ -12,7 +12,7 @@ class PostingController extends Controller
     public function index(Request $request, Posting $posting){
         //$users = User::all();
         $postings = $posting->getPostingsBySearch($request)->orderBy('id', 'desc')->get();
-        return view('postings', compact('postings'))->with('postings',$postings);
+        return view('postings', compact('postings', 'request'))->with(['postings' => $postings, 'request' => $request]);
     }
 
     public function lastMessage(){

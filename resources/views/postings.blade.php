@@ -9,12 +9,12 @@
     <form>
         <div class="form-group">
             <label for="exampleInputEmail">Search by name</label>
-            <input type="text" name="name" class="form-control" id="name" placeholder="Поиск">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Поиск" value="{{$request->name}}">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail">Search by text</label>
-            <input type="text" name="text" class="form-control" id="text" placeholder="Поиск">
+            <input type="text" name="text" class="form-control" id="text" placeholder="Поиск" value="{{$request->text}}">
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
