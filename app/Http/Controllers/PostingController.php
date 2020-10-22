@@ -9,13 +9,14 @@ use App\Models\Posting;
 class PostingController extends Controller
 {
 
-    public function index(Request $request, Posting $posting){
-        //$users = User::all();
+    public function index(Request $request, Posting $posting)
+    {
         $postings = $posting->getPostingsBySearch($request)->orderBy('id', 'desc')->get();
         return view('postings', compact('postings', 'request'))->with(['postings' => $postings, 'request' => $request]);
     }
 
-    public function lastMessage(){
+    public function lastMessage()
+    {
         $posting = new Posting;
         return view('main', ['data' => $posting->orderBy('id', 'desc')->take(3)->get()]);
     }
@@ -33,25 +34,12 @@ class PostingController extends Controller
         $posting->save();
 
         return redirect()->route('posting-data')->with('success', 'Пост успешно добавлен');
-
-//        $validation = $req->validate([
-//            'name' => 'required|min:2',
-//            'message' => 'required|min:5'
-//        ]);
-//        dd($req -> input('message'));
     }
-
-    /*
-    public function allUsersPosts(){
-        $posting = new Posting;
-        return view('postings', ['postings' => $posting->orderBy('id', 'desc')->get()]);
-    }
-*/
 
     public function allData()
     {
         $posting = new Posting;
-        $name = auth()->user()->name;
+        //$name = auth()->user()->name;
         $email = auth()->user()->email;
 
         return view('posting', ['data' => $posting
@@ -75,9 +63,6 @@ class PostingController extends Controller
     {
 
         $posting = Posting::find($id);
-
-        //$posting->name = $req->input('name');
-        //$posting->email = $req->input('email');
         $posting->message = $req->input('message');
 
         $posting->save();

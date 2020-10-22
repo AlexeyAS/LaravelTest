@@ -8,12 +8,14 @@ use App\Mail\sendMail;
 
 class MailController extends Controller
 {
-    public function send(){
+    public function send()
+    {
         Mail::send(new sendMail());
         return redirect()->route('main')->with('success', 'Спам отправлен');
     }
 
-    public function email(){
+    public function email()
+    {
         return view('email');
     }
 }
