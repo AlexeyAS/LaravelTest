@@ -1,23 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# LaravelTest
 
+## Install
+1) Create .env file from .env.example and generate APP_KEY
+2) `composer install`
+3) `npm install && npm run dev`
+4) Create database laravel_db with utf8_general_ci and run `php artisan migrate` OR import laravel_db.sql with test values
+5) Register new user for authorisation.
+6) (Optional) For send mail, change MAIL_HOST, MAIL_USERNAME, MAIL_PASSWORD, MAIL_ENCRYPTION, MAIL_FROM_ADDRESS in .env file
+
+
+<sub>*Optional `chmod -R 777 .`*</sub>
+<br>
+<sub>*Optional `service apache2 restart` OR `service nginx restart`*</sub>
+
+## About
+
+- Создание/редактирование/удаление постов пользователя
+- Список всех постов, фильтрация по имени, по тексту
+- Список всех пользователей, фильтрация по имени, по почте, вывод постов на пользователя, разбивка на страницы
+- *Отправка почты*
+#
+
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
-
-## Install
-1) Create .env file from .env.example
-2) `composer install`
-3) `npm install && npm run dev`
-4) `php artisan migrate` OR import laravel_db with test values
-5) (Optional) For send mail, change MAIL_HOST, MAIL_USERNAME, MAIL_PASSWORD, MAIL_ENCRYPTION, MAIL_FROM_ADDRESS in .env file
-
-
-<sub>*Optional `chmod -R 777 .`*</sub>
-<br>
-<sub>*Optional `service apache2 restart` OR `service nginx restart`*</sub>
 
 ## About Laravel
 
