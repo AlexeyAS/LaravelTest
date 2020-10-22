@@ -11,8 +11,13 @@
 1) Create .env file from .env.example
 2) `composer install`
 3) `npm install && npm run dev`
-4) (Optional) `chmod -R 777 .`
-5) `php artisan migrate` OR import laravel_db with test values
+4) `php artisan migrate` OR import laravel_db with test values
+5) (Optional) For send mail, change MAIL_HOST, MAIL_USERNAME, MAIL_PASSWORD, MAIL_ENCRYPTION, MAIL_FROM_ADDRESS in .env file
+
+
+<sub>*Optional `chmod -R 777 .`*</sub>
+<br>
+<sub>*Optional `service apache2 restart` OR `service nginx restart`*</sub>
 
 ## About Laravel
 
