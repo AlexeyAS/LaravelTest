@@ -9,10 +9,6 @@
 6) (Optional) For send mail, change MAIL_HOST, MAIL_USERNAME, MAIL_PASSWORD, MAIL_ENCRYPTION, MAIL_FROM_ADDRESS in <b>.env</b> file
 7) (Optional) Create the new database laravel_db with utf8_general_ci and run `php artisan migrate`
 
-<sub>*Optional `chmod -R 777 .`*</sub>
-<br>
-<sub>*Optional `service apache2 restart` OR `service nginx restart`*</sub>
-
 ## About
 
 - Создание/редактирование/удаление постов пользователя
